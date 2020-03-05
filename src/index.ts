@@ -1,5 +1,5 @@
 import fastify from 'fastify'
-import Helmet from 'fastify-helmet'
+import helmet from 'fastify-helmet'
 import WebSocket from 'ws'
 import config from './config'
 import pubsub from './pubsub'
@@ -9,7 +9,7 @@ import pkg from '../package.json'
 
 const app = fastify({ logger: config.debug })
 
-app.register(Helmet)
+app.register(helmet)
 
 app.get('/health', (_, res) => {
   res.status(204).send()
